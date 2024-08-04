@@ -34,7 +34,7 @@ const Home = () => {
       ctx.drawImage(img, (canvasWidth - drawWidth) / 2, (canvasHeight - drawHeight) / 2, drawWidth, drawHeight);
     };
 
-    const circleRadius = 170; // Circle radius
+    const circleRadius = 150; // Circle radius
     let mouseX = canvas.width / 2;
     let mouseY = canvas.height / 2;
     let targetX = mouseX;
@@ -49,7 +49,7 @@ const Home = () => {
       drawImageFitToCanvas(ctx, img, canvas.width, canvas.height);
 
       // Apply the blur effect to the entire canvas
-      ctx.globalAlpha = 0.5; // Change opacity to give blur effect
+      ctx.globalAlpha = 0.9; // Change opacity to give blur effect
       ctx.filter = 'blur(10px)';
       drawImageFitToCanvas(ctx, img, canvas.width, canvas.height);
       ctx.globalAlpha = 1;

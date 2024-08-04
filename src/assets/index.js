@@ -35,7 +35,11 @@ import body8 from './bodybuilding/body8.jpg'
 import body9 from './bodybuilding/body9.jpg'
 import body10 from './bodybuilding/body10.jpg'
 
-
+import frame1 from './frames/frame1.png'
+import frame2 from './frames/frame2.png'
+import frame3 from './frames/frame3.png'
+import frame4 from './frames/frame4.png'
+import frame5 from './frames/frame5.png'
 
 export {
     s,
@@ -73,5 +77,11 @@ export {
     body8,
     body9,
     body10,
+
+    frame1,
+    frame2,
+    frame3,
+    frame4,
+    frame5,
 
 }

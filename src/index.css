@@ -578,9 +578,18 @@ nav {
   background: #f5f5f5 !important;
 }
 
-.about{
+.close-icon{
+  transition: all 0.2s linear;
+}
+.closeit{
+  z-index: 9999999;
+}
+
+.about.active {
+  visibility: visible;
   z-index: 1000;
 }
+
 .about {
   position: absolute;
   display: block;
@@ -604,28 +613,7 @@ nav {
   background-color: #f5f5f5;
   height: 100%;
   width: 100%;
-  -ms-transform-origin: 100% 50%;
   transform-origin: 100% 50%;
-}
-.about .aboutInner .close {
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  right: 70px;
-  top: 70px;
-  opacity: 0.3;
-  transform: rotate(-45deg);
-}
-.about .aboutInner .close2 {
-  width: 65px;
-  height: 65px;
-  position: absolute;
-  right: 50px;
-  top: 50px;
-  z-index: 100000000;
-  transform: rotate(-45deg);
-  opacity: 0;
-  cursor: pointer;
 }
 .about .aboutInner .aboutBgCropper {
   overflow: hidden;
@@ -634,6 +622,7 @@ nav {
   left: 0px;
   height: 100%;
 }
+
 .about .aboutInner .aboutTextAreaOuter {
   width: 100%;
   position: relative;
@@ -645,14 +634,13 @@ nav {
 .about .aboutInner .impressum {
   width: calc(38.2% - 70px);
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   z-index: 3;
   position: absolute;
   bottom: 50px;
   left: 70px;
   line-height: 24px;
-  font-family: "ministry", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 300;
   color: #f5f5f5;
   font-size: 12px;
@@ -665,108 +653,58 @@ nav {
   width: 100%;
   height: 100%;
   background-color: #262324;
-  -webkit-transform-origin: 100% 50%;
-  -ms-transform-origin: 100% 50%;
   transform-origin: 100% 50%;
   overflow: hidden;
 }
-
 .about .aboutInner .aboutBgCropper .aboutBg .aboutPictureLeft {
   position: absolute;
   width: calc(100% - 30px);
-  left: 30px;
-  top: 40%;
+  top: 50%;
   transform: translate(0, -50%);
 }
 
 .about .aboutInner .aboutTextAreaOuter .aboutTextAreaInner {
   position: relative;
-  overflow-y: scroll;
   width: 100%;
   height: 100%;
 }
-
-.scroll-content {
-  transform: translate3d(0, 0, 0);
-}
-
-.scrollbar-track-x {
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 8px;
-}
-.scrollbar-thumb {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 8px;
-}
-
-.scrollbar-track-y {
-  top: 0;
-  right: 0;
-  width: 8px;
-  height: 100%;
-}
-
-.scrollbar-thumb {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 8px;
-}
-
-.scrollbar-track {
-  background: none !important;
-}
-
-.scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.4) !important;
-  border-radius: 0px !important;
-}
-
-
 .about .aboutInner .aboutBgCropperMobile {
   display: none;
 }
-
+.about .aboutInner .aboutBgCropperMobile .aboutBgMobile {
+  position: relative;
+  padding-top: 0px;
+  padding-bottom: 20px;
+  background-color: #262324;
+}
+.about .aboutInner .aboutBgCropperMobile .aboutBgMobile .aboutPictureLeftMobile {
+  position: relative;
+  left: 0px;
+  top: 20px;
+  width: calc(100% - 0px);
+}
 .about .aboutInner .aboutTextAreaOuter .aboutTextAreaInner .aboutTextArea {
+  left: 38.2%;
   height: 100%;
+  padding-left: 7%;
+  padding-right: 7%;
   perspective: 1000px;
   position: absolute;
   z-index: 2;
 }
-.about .aboutInner .aboutBgCropperMobile .aboutBgMobile {
-  position: relative;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background-color: #262324;
-}
-
-.about .aboutInner .aboutBgCropperMobile .aboutBgMobile .aboutPictureLeftMobile {
-  position: relative;
-  left: 30px;
-  top: 20px;
-  width: calc(100% - 30px);
-}
-img {
-  border: 0;
-}
-
 
 .about .aboutInner .text {
-  font-family: "Lato", sans-serif;
+  font-family: "Caudex", sans-serif;
   font-weight: 700;
+  color: #f5f5f5;
   color: #262324;
   font-size: 35px;
   margin-top: 22%;
 }
-
 .about .aboutInner .subtext {
   margin-top: 100px;
-  font-family: "ministry", sans-serif;
-  font-weight: 300;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
   font-size: 14px;
   color: #262324;
   line-height: 26px;
@@ -780,17 +718,74 @@ img {
   height: auto;
   width: auto;
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-bottom: 130px;
 }
 
+.about .aboutInner .pic_container .pic1 {
+  transition: transform 400ms, -webkit-transform 400ms;
+  max-width: 100%;
+  position: relative;
+  margin-top: 10px;
+}
+.about .aboutInner .pic_container .pic2 {
+  transition: transform 400ms, -webkit-transform 400ms;
+  max-width: 100%;
+  position: relative;
+  margin-top: 10px;
+  margin-left: 1rem;
+}
+
+.about .aboutInner .pic_container .pic3 {
+  transition: transform 400ms, -webkit-transform 400ms;
+  max-width: 108%;
+  position: relative;
+  margin-top: 10px;
+  margin-left: 1rem;
+}
+
+.about .aboutInner .pic_container .pic4 {
+  transition: transform 400ms, -webkit-transform 400ms;
+  max-width: 100%;
+  position: relative;
+  margin-top: 3rem;
+  margin-left: 1rem;
+}
+
+.about .aboutInner .pic_container .pic5 {
+  transition: transform 400ms, -webkit-transform 400ms;
+  max-width: 100%;
+  position: relative;
+  margin-top: 3rem;
+  margin-left: 1rem;
+}
+
+.about .aboutInner .pic_container .picimg {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.about .aboutInner .pic_container .picDescr {
+  font-family: "Caudex", sans-serif;
+  font-weight: 300;
+  color: #848384;
+  font-size: 12px;
+  line-height: 18px;
+  padding-left: 4%;
+  padding-right: 4%;
+  margin-top: 10px;
+}
+.about .aboutInner .pic_container .picDescr .analogYear {
+  color: #262324;
+  font-weight: 700;
+  line-height: 30px;
+  font-size: 14px;
+}
+
 .about .aboutInner .impressum_mobile {
   display: none;
-  font-family: "ministry", sans-serif;
+  font-family: "Caudex", sans-serif;
   font-weight: 300;
-  font-size: 14px;
-  color: #f5f5f5;
   z-index: 3;
   position: relative;
   color: #262324;
@@ -800,57 +795,6 @@ img {
   line-height: 18px;
   margin-top: 50px;
 }
-
-.about .aboutInner .disclaimer {
-  position: relative;
-  font-family: "ministry", sans-serif;
-  font-weight: 300;
-  font-size: 14px;
-  color: #f5f5f5;
-  color: #848384;
-  font-size: 12px;
-  line-height: 18px;
-  margin-bottom: 50px;
-  text-align: justify;
-}
-
-.about .aboutInner .pic_container .pic1 {
-  -webkit-transition: -webkit-transform 400ms;
-  transition: -webkit-transform 400ms;
-  -o-transition: transform 400ms;
-  transition: transform 400ms;
-  transition: transform 400ms, -webkit-transform 400ms;
-  max-width: 28%;
-  position: relative;
-  margin-top: 10px;
-}
-
-.about .aboutInner .pic_container .picimg {
-  position: relative;
-  width: 100%;
-  height: auto;
-}
-
-.about .aboutInner .pic_container .picDescr {
-  font-family: ministry, sans-serif;
-  font-weight: 300;
-  font-size: 14px;
-  color: #f5f5f5;
-  color: #848384;
-  font-size: 12px;
-  line-height: 18px;
-  padding-left: 4%;
-  padding-right: 4%;
-  margin-top: 10px;
-}
-
-.about .aboutInner .pic_container .picDescr .analogYear {
-  color: #262324;
-  font-weight: 700;
-  line-height: 30px;
-  font-size: 14px;
-}
-
 .about .aboutInner .impressum_mobile .h {
   font-weight: 500;
   opacity: 1;
@@ -860,22 +804,25 @@ img {
   line-height: 22px;
   margin-bottom: 20px;
 }
-
 .about .aboutInner .impressum_mobile .t {
   display: block;
   position: relative;
 }
-
 .about .aboutInner .impressum_mobile .t .stagger {
   position: relative;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a {
+  background-color: transparent;
 }
 
 .about .aboutInner .disclaimer {
   position: relative;
-  font-family: "ministry", sans-serif;
+  font-family: "Caudex", sans-serif;
   font-weight: 300;
-  font-size: 14px;
-  color: #f5f5f5;
   color: #848384;
   font-size: 12px;
   line-height: 18px;
@@ -886,19 +833,16 @@ img {
   margin-bottom: 30px;
 }
 
-
-.about .aboutInner .disclaimer .breakLine {
-  margin-bottom: 30px;
+.about .aboutInner .impressum .contactText {
+  -webkit-box-flex: 1;
+  flex: 1 50%;
   position: relative;
-  height: 1px;
-  width: 100%;
-  background-color: #262324;
-  opacity: 0.1;
 }
 
-.about .aboutInner .disclaimer .disclaimerHeadline {
-  margin-bottom: 15px;
+.about .aboutInner .impressum .contactText .stagger {
+  position: relative;
 }
+
 
 @media (max-width: 1280px) { 
     .logo {
@@ -944,23 +888,15 @@ img {
     display: none;
   }
 
-  .about .aboutInner .close {
-    right: 30px;
-    top: 40px;
-}
 
-.about .aboutInner .close2 {
-  right: 10px;
-  top: 20px;
-}
 
-.about .aboutInner .impressum {
-  left: 50px;
+  .about .aboutInner .aboutBgCropper .aboutBg .aboutPictureLeft {
+    top: 35%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-
-.about .aboutInner .aboutBgCropper .aboutBg .aboutPictureLeft {
-  top: 35%;
-}
+  
 .about .aboutInner .aboutTextAreaOuter .aboutTextAreaInner .aboutTextArea {
   padding-left: 5%;
 }
@@ -968,7 +904,6 @@ img {
   margin-top: 22%;
   font-size: 25px;
 }
-
 .about .aboutInner .subtext {
   width: 100%;
   font-size: 13px;
@@ -982,39 +917,33 @@ img {
   margin-bottom: 60px;
   width: calc(100% + 18px);
   left: 50%;
+  -webkit-transform: translate(-50%);
+  -moz-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  -o-transform: translate(-50%);
   transform: translate(-50%);
 }
-.about .aboutInner .pic_container {
-  margin-bottom: 60px;
-  width: calc(100% + 18px);
-  left: 50%;
-  transform: translate(-50%);
-}
-
 .about .aboutInner .pic_container .pic1 {
-  max-width: 49%;
   margin-top: 40px;
 }
-
+.about .aboutInner .impressum {
+  left: 50px;
+}
 
 }
 
-
 @media (max-width: 1279px) {
-  .about .aboutInner .impressum {
-      margin-top: 50px;
-      margin-right: 40px;
-      line-height: 20px;
-      font-size: 12px;
-  }
-
   .about .aboutInner .impressum_mobile .h {
     font-size: 18px;
 }
-
-
+.about .aboutInner .impressum {
+  margin-top: 50px;
+  margin-right: 40px;
+  line-height: 20px;
+  font-size: 12px;
 }
 
+}
 @media (max-width: 1024px) {
   .home .home-inner #focusCanvas {
       visibility: hidden;
@@ -1029,9 +958,6 @@ img {
   font-size: 6em;
 }
 }
-
-
-
 @media (max-width: 991.98px) { 
     .phoneWrapper {
       z-index: 1000;
@@ -1049,17 +975,8 @@ img {
   .gallery-overview .gallery-overview-outer .gallery-overview-inner .gallery-overview-image:first-child {
     margin-top: 120px;
   }
-  .about .aboutInner .close {
-    right: 20px;
-    top: 30px;
-  }
 
-  .about .aboutInner .close2 {
-    right: 0px;
-    top: 10px;
 }
-}
-
 @media (orientation: landscape) and (max-width: 767px) {
   .logo {
       width: 100px;
@@ -1128,8 +1045,6 @@ img {
 
 
 }
-
-
 @media (max-width: 767.98px) { 
   .model-foto{
     display: flex;
@@ -1143,13 +1058,94 @@ img {
     width: 100%;
   }
   
+  .about-col{
+    padding-left : 0px !important;
+    padding-right : 0px !important;
+  }
+  .mobile-p{
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+  }
+
+  .pic2,.pic3,.pic4,.pic5{
+    margin-left: 0px !important;
+  }
+
+  .pic2,.pic3,.pic4,.pic5{
+    margin-top: 2rem !important;
+  }
 }
 @media (max-width: 575.98px) {
   .ant-modal-close{
     left: 43%;
   }
- }
+}
+
 @media (max-width: 480.98px) {
+  
+.about .aboutInner .aboutBgCropper {
+    display: none;
+}
+.about .aboutInner .aboutBgCropper .aboutBg .aboutPictureLeft {
+  top: 30%;
+}
+.about .aboutInner .aboutBgCropperMobile {
+  display: block;
+}
+.about .aboutInner .aboutTextAreaOuter .aboutTextAreaInner .aboutTextArea {
+  padding-left: 25px;
+  padding-right: 25px;
+  left: 0px;
+}
+.about .aboutInner .text {
+  margin-top: 0px;
+  padding-top: 45px;
+  font-size: 18px;
+}
+.about .aboutInner .subtext {
+  width: auto;
+  font-size: 12px;
+  line-height: 18px;
+  margin-top: 40px;
+  margin-bottom: 0px;
+}
+.about .aboutInner .pic_container {
+  margin-bottom: 10px;
+  width: calc(100% + 24px);
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  -moz-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  -o-transform: translate(-50%);
+  transform: translate(-50%);
+}
+
+.about .aboutInner .impressum_mobile {
+  display: block;
+}
+.about .aboutInner .impressum_mobile .h {
+  font-size: 16px;
+  line-height: 18px;
+}
+.about .aboutInner .disclaimer {
+  font-size: 10px;
+  line-height: 16px;
+}
+.about .aboutInner .disclaimer .createdBy {
+  margin-top: 50px;
+  font-size: 12px;
+}
+.about .aboutInner .impressum {
+  display: none;
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 40px;
+}
+
+
+
+
+
   .logo {
     width: 100px;
     height: 45px;
@@ -1231,115 +1227,8 @@ img {
   overflow: hidden;
 }
 
-.about .aboutInner .close {
-  z-index: 3;
-  opacity: 1;
-  background-color: #262324;
-  right: 15px;
-  top: 15px;
-  width: 29px;
-  height: 29px;
+.close-icon{
+  color: rgba(0, 0, 0, 0.237);
 }
-.about .aboutInner .close2 {
-  width: 39px;
-  height: 39px;
-  right: 10px;
-  top: 10px;
-}
-
-.about .aboutInner .aboutBgCropper {
-  display: none;
-}
-.about .aboutInner .impressum {
-  display: none;
-  font-size: 12px;
-  line-height: 16px;
-  margin-top: 40px;
-}
-.about .aboutInner .aboutBgCropper .aboutBg .aboutPictureLeft {
-  top: 30%;
-}
-.about .aboutInner .aboutBgCropperMobile {
-  display: block;
-}
-
-.about .aboutInner .aboutBgCropperMobile {
-  display: block;
-}
-
-.about .aboutInner .aboutTextAreaOuter .aboutTextAreaInner .aboutTextArea {
-  padding-left: 25px;
-  padding-right: 25px;
-  left: 0px;
-}
-
-.about .aboutInner .text {
-  margin-top: 0px;
-  padding-top: 45px;
-  font-size: 18px;
-}
-.about .aboutInner .subtext {
-  width: auto;
-  font-size: 12px;
-  line-height: 18px;
-  margin-top: 40px;
-  margin-bottom: 0px;
-}
-.about .aboutInner .pic_container {
-  margin-bottom: 10px;
-  width: calc(100% + 24px);
-  left: 50%;
-  transform: translate(-50%);
-}
-
-.about .aboutInner .impressum_mobile {
-  display: block;
-}
-
-.about .aboutInner .disclaimer {
-  font-size: 10px;
-  line-height: 16px;
-}
-.about .aboutInner .pic_container {
-  margin-bottom: 10px;
-  width: calc(100% + 24px);
-  left: 50%;
-  -webkit-transform: translate(-50%);
-  -moz-transform: translate(-50%);
-  -ms-transform: translate(-50%);
-  -o-transform: translate(-50%);
-  transform: translate(-50%);
-}
-
-.about .aboutInner .impressum_mobile {
-  display: block;
-}
-
-.about .aboutInner .disclaimer {
-  font-size: 10px;
-  line-height: 16px;
-}
-
-.about .aboutInner .pic_container .pic1 {
-  display: none;
-  max-width: 100%;
-  margin-top: 40px;
-}
-.about .aboutInner .impressum_mobile .h {
-  font-size: 16px;
-  line-height: 18px;
-}
-
-.about .aboutInner .disclaimer {
-  font-size: 10px;
-  line-height: 16px;
-}
-
-.about .aboutInner .disclaimer .createdBy {
-  margin-top: 50px;
-  font-size: 12px;
-}
-
-
 }
 

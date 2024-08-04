@@ -6,6 +6,9 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useAnimeContext } from '../context/animeContext';
 import { Button, Drawer } from 'antd';
 import { About } from '../components'
+import { motion } from 'framer-motion'
+
+
 
 const Interface = () => {
   const navigate = useNavigate();
@@ -126,9 +129,10 @@ const Interface = () => {
         className="logo"
         style={{ opacity: 1, transform: 'matrix(1, 0, 0, 1, 0, 0)' }}
       >
-        <div className="logo-main cursor-pointer" onClick={() => handleRedirect("/")}>
+        <motion.div className="logo-main cursor-pointer" onClick={() => handleRedirect("/")}
+        >
           <img src={logo} alt="logo" />
-        </div>
+        </motion.div>
       </div>
       <nav className="navi">
         <div className="menu">
@@ -160,11 +164,11 @@ const Interface = () => {
       </div>
       <a
         target="_blank"
-        href="mailto:sakegokhalet@gmail.com"
+        href="mailto:saket@monk-e.in"
         className="email font-semibold"
         style={{ opacity: 1, transform: 'matrix(1, 0, 0, 1, 0, 0)' }}
       >
-        sakegokhalet@gmail.com
+        saket@monk-e.in
         <div className="emailline" style={{ opacity: 0, transform: 'scaleX(0)', transformOrigin: 'center' }} />
       </a>
       <div
@@ -186,7 +190,7 @@ const Interface = () => {
       width='100%'
       height='100%'
       >
-        <About />
+        <About setOpen={setOpen}/>
       </Drawer>
     </div>
   );
