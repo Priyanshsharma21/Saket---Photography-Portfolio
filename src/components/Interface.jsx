@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { logo } from '../assets';
 import { navItems } from '../constants';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useAnimeContext } from '../context/animeContext';
-import { Button, Drawer } from 'antd';
+import { Drawer } from 'antd';
 import { About } from '../components'
 import { motion } from 'framer-motion'
 
@@ -12,7 +11,6 @@ import { motion } from 'framer-motion'
 
 const Interface = () => {
   const navigate = useNavigate();
-  const { pathName } = useAnimeContext();
   const location = useLocation();
   const [path, setPath] = useState("/");
   const [open, setOpen] = useState(false);

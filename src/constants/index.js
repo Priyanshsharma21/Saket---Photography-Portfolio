@@ -7,6 +7,7 @@ import {
     imp5,
     imp6,
     imp7,
+    imp8,
     imp9,
     imp10,
 
@@ -89,6 +90,7 @@ export const navItems = [
             imp5,
             imp6,
             imp7,
+            imp8,
             imp9,
             imp10,]
     },

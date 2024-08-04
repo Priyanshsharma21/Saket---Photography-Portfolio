@@ -45,7 +45,6 @@ export {
     s,
     logo,
 
-
     imp1,
     imp2,
     imp3,
@@ -53,9 +52,9 @@ export {
     imp5,
     imp6,
     imp7,
+    imp8,
     imp9,
     imp10,
-
 
     for1,
     for2,
@@ -83,5 +82,4 @@ export {
     frame3,
     frame4,
     frame5,
-
 }

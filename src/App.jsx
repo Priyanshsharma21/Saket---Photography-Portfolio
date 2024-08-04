@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Preloader } from './components';
 import { AnimatePresence } from 'framer-motion';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { Home, WorkDetails } from './pages';
 
 
@@ -21,18 +21,6 @@ const App = () => {
 
     loadContent();
   }, []);
-
-
-  // useEffect( () => {
-  //   (
-  //     async () => {
-  //         const LocomotiveScroll = (await import('locomotive-scroll')).default
-  //         const locomotiveScroll = new LocomotiveScroll();
-  //     }
-  //   )()
-  // }, [])
-
-
 
   return (
     <>

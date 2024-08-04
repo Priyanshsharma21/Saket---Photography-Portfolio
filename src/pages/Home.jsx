@@ -34,12 +34,12 @@ const Home = () => {
       ctx.drawImage(img, (canvasWidth - drawWidth) / 2, (canvasHeight - drawHeight) / 2, drawWidth, drawHeight);
     };
 
-    const circleRadius = 150; // Circle radius
+    const circleRadius = 150; 
     let mouseX = canvas.width / 2;
     let mouseY = canvas.height / 2;
     let targetX = mouseX;
     let targetY = mouseY;
-    const easingFactor = 0.02; // Easing factor for smooth movement
+    const easingFactor = 0.02; 
 
     let blurEffect = false;
     let lastSwitchTime = Date.now();
@@ -48,37 +48,33 @@ const Home = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       drawImageFitToCanvas(ctx, img, canvas.width, canvas.height);
 
-      // Apply the blur effect to the entire canvas
-      ctx.globalAlpha = 0.9; // Change opacity to give blur effect
+      ctx.globalAlpha = 0.9; 
       ctx.filter = 'blur(10px)';
       drawImageFitToCanvas(ctx, img, canvas.width, canvas.height);
       ctx.globalAlpha = 1;
       ctx.filter = 'none';
 
-      // Easing calculation
       const dx = targetX - mouseX;
       const dy = targetY - mouseY;
       mouseX += dx * easingFactor;
       mouseY += dy * easingFactor;
 
-      // Check if it's time to switch the blur effect
       if (Date.now() - lastSwitchTime >= (blurEffect ? 1000 : 2000)) {
         blurEffect = !blurEffect;
         lastSwitchTime = Date.now();
       }
 
-      // Draw the clear or slightly blurred circular area around the cursor
       ctx.save();
       ctx.beginPath();
       ctx.arc(mouseX, mouseY, circleRadius, 0, 2 * Math.PI);
       ctx.clip();
       if (blurEffect) {
-        ctx.filter = 'blur(3px)'; // Apply a slight blur
+        ctx.filter = 'blur(3px)'; 
       } else {
-        ctx.filter = 'none'; // No blur
+        ctx.filter = 'none'; 
       }
       ctx.translate(mouseX, mouseY);
-      const scale = blurEffect ? 1.05 : 1; // Slight magnification when blurred
+      const scale = blurEffect ? 1.05 : 1; 
       ctx.scale(scale, scale);
       ctx.translate(-mouseX, -mouseY);
       drawImageFitToCanvas(ctx, img, canvas.width, canvas.height);
@@ -115,7 +111,7 @@ const Home = () => {
             position: 'absolute',
             display: 'block',
             cursor: 'inherit',
-            transition: 'transform 0.2s linear' // Added transition effect
+            transition: 'transform 0.2s linear' 
           }}
         />
         <div className="canvasOverlay" style={{ opacity: 0 }} />

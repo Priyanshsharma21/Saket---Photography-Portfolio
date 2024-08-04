@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { IoCloseOutline } from "react-icons/io5";
 import gsap from 'gsap';
 import { aboutData } from '../constants';
