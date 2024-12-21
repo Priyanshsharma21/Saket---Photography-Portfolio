@@ -110,6 +110,33 @@ const Interface = () => {
   }, []);
 
   useEffect(() => {
+    const saketAI = document.querySelector('.phone');
+  
+    saketAI.addEventListener('mouseenter', () => {
+      gsap.to('.saketailine', {
+        opacity: 1,
+        scaleX: 1,
+        duration: 0.5,
+        ease: 'power1.inOut',
+      });
+    });
+  
+    saketAI.addEventListener('mouseleave', () => {
+      gsap.to('.saketailine', {
+        opacity: 0,
+        scaleX: 0,
+        duration: 0.5,
+        ease: 'power1.inOut',
+      });
+    });
+  
+    return () => {
+      saketAI.removeEventListener('mouseenter', () => {});
+      saketAI.removeEventListener('mouseleave', () => {});
+    };
+  }, []);
+
+  useEffect(() => {
     if (location.pathname === "/") {
       setPath("/");
     } else {
@@ -120,6 +147,12 @@ const Interface = () => {
   const handleRedirect = (path) => {
     navigate(path);
   };
+
+  const handleClick = ()=>{
+    navigate("/saketai")
+  }
+
+  
 
   return (
     <div className="interface">
@@ -160,6 +193,17 @@ const Interface = () => {
           </div>
         </div>
       </div>
+
+      <div className="aboutmenu_wrapper saketAIMobile" onClick={handleClick}>
+        <div
+          className="aboutmenu font-semibold"
+        >
+          <div className="aboutword font-semibold">
+            Saket AI
+            <div className="aboutline" style={{ opacity: 0, transform: 'scaleX(0)', transformOrigin: 'center' }} />
+          </div>
+        </div>
+      </div>
       <a
         target="_blank"
         href="mailto:saket@monk-e.in"
@@ -170,11 +214,14 @@ const Interface = () => {
         <div className="emailline" style={{ opacity: 0, transform: 'scaleX(0)', transformOrigin: 'center' }} />
       </a>
       <div
-        className="phoneWrapper"
-        style={{ opacity: 1, transform: 'matrix(1, 0, 0, 1, 0, 0)' }}
-      >
-        <div className="phone font-semibold">+43 (0)664 1007343</div>
-      </div>
+  className="phoneWrapper"
+  style={{ opacity: 1, transform: 'matrix(1, 0, 0, 1, 0, 0)' }}
+>
+  <div className="phone font-semibold cursor-pointer" onClick={handleClick}>
+    Saket AI
+    <div className="saketailine" style={{ opacity: 0, transform: 'scaleX(0)', transformOrigin: 'center' }} />
+  </div>
+</div>
       <div
         className="slogan"
         style={{ opacity: 1, transform: 'matrix(1, 0, 0, 1, 0, 0)' }}

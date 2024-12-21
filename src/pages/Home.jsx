@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import withContainer from '../hof/Hof';
 import { useAnimeContext } from '../context/animeContext';
+import Tilt from "react-parallax-tilt";
 
 const Home = () => {
   const { setPathName } = useAnimeContext();
@@ -39,7 +40,7 @@ const Home = () => {
     let mouseY = canvas.height / 2;
     let targetX = mouseX;
     let targetY = mouseY;
-    const easingFactor = 0.02; 
+    const easingFactor = 0.04; 
 
     let blurEffect = false;
     let lastSwitchTime = Date.now();
@@ -98,24 +99,36 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="home overflow-auto">
-      <div className="home-inner">
-        <div className="mobile-main-bg" />
-        <canvas
-        className='canvas-main'
-          ref={canvasRef}
-          width={window.innerWidth}
-          height={window.innerHeight}
-          style={{
-            touchAction: 'none',
-            position: 'absolute',
-            display: 'block',
-            cursor: 'inherit',
-            transition: 'transform 0.2s linear' 
-          }}
-        />
-        <div className="canvasOverlay" style={{ opacity: 0 }} />
-      </div>
+    <div className="home overflow-hidden">
+     {/* <Tilt
+     tiltAxis={"y"}
+          className="background-stripes track-on-window"
+          tiltReverse={true}
+          trackOnWindow={true}
+          tiltMaxAngleX={4}  // Reduced tilt angle on X-axis
+  tiltMaxAngleY={4}  // Reduced tilt angle on Y-axis
+  transitionSpeed={1000} // Smooth transition speed (optional)
+        > */}
+           <div className="home-inner">
+     
+     <div className="mobile-main-bg" />
+     <canvas
+     className='canvas-main'
+       ref={canvasRef}
+       width={window.innerWidth}
+       height={window.innerHeight}
+       style={{
+         touchAction: 'none',
+         position: 'absolute',
+         display: 'block',
+         cursor: 'inherit',
+         transition: 'transform 0.2s linear' 
+       }}
+     />
+     <div className="canvasOverlay" style={{ opacity: 0 }} />
+   </div>
+        {/* </Tilt> */}
+     
     </div>
   );
 };

@@ -75,7 +75,7 @@ body {
   justify-content: center;
   position: fixed;
   z-index: 99;
-  background-color: rgb(38, 35, 36);
+  background-color: #262324;
 }
 
 .preloader-img-main {
@@ -242,6 +242,18 @@ nav {
   margin-top: 4px;
 }
 
+.saketailine {
+  position: absolute;
+  background-color: #f5f5f5;
+  width: 100%;
+  height: 2px;
+  -ms-transform-origin: 10%;
+  transform-origin: 10%;
+  opacity: 0;
+  margin-top: 4px;
+}
+
+
 .phoneWrapper {
   z-index: 1000;
   position: absolute;
@@ -251,7 +263,7 @@ nav {
   color: #f5f5f5;
   right: 61.8%;
   bottom: 70px;
-  width: 169px;
+  width: 100;
   cursor: text;
 }
 .slogan {
@@ -320,7 +332,7 @@ nav {
   height: 100%;
   position: absolute;
   background-color: rgb(38, 35, 36);
-  background-image: url(./assets/saket-mob.png);
+  background-image: url("https://res.cloudinary.com/dmjswpxjb/image/upload/v1734799205/Picsart_24-08-01_12-39-00-912_3_p0qqvy.png");
   background-size: cover;
   background-position: center;
   display: none;
@@ -338,6 +350,7 @@ nav {
   position: absolute;
   height: 100%;
 }
+
 
 .canvasOverlay {
   position: absolute;
@@ -652,7 +665,7 @@ nav {
 }
 .about .aboutInner .aboutBgCropper .aboutBg .aboutPictureLeft {
   position: absolute;
-  width: calc(100% - 30px);
+  width: calc(100% - 0px);
   top: 50%;
   transform: translate(0, -50%);
 }
@@ -837,6 +850,103 @@ a {
   position: relative;
 }
 
+
+.sai .sai_hero_heading{
+  font-size: 19vh;
+  font-weight : 600;
+  font-family: Lato, sans-serif;
+  line-height: 1em;
+  color: #f5f5f5;
+}
+
+.sai_hero_subheading{
+  font-size: 16px;
+  font-weight : 200;
+  font-family: Caudex, sans-serif;
+  color: #f5f5f5;
+}
+
+.saketGlass{
+background: rgba(0, 0, 0, 0.804);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(21.5px);
+-webkit-backdrop-filter: blur(21.5px);
+}
+
+.sai_description{
+  font-size: 56px;
+  font-weight : 400;
+  font-family: Caudex, sans-serif;
+  margin-left: 1rem;
+  color:#f5f5f5;
+}
+
+/* back btn */
+.btnBack{
+  background: #0000004d;
+  border-radius: 100px;
+  padding: 1rem;
+}
+
+.leftContentFit{
+  position: absolute;
+  left: 10%;
+  top: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.saketAITitle{
+  font-size:15vh;
+  font-weight:800;
+  font-family: Lato, sans-serif;
+}
+.saketAISubtitle{
+  font-size: 15px;
+  font-weight: 300;
+  font-family: Lato, sans-serif;
+  max-width: 250px;
+  text-align: left;
+}
+.saketAISubtitle2{
+  font-size: 14px;
+  font-weight: 300;
+  font-family: Lato, sans-serif;
+  max-width: 250px;
+  text-align: left;
+  padding-right: 1rem;
+}
+
+.saketAITitle2{
+  font-size:12vh;
+  font-weight:800;
+  font-family: Lato, sans-serif;
+  line-height: 1.1em;
+}
+
+.cardAI{
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.mobileText{
+  display: none;
+}
+.desktopText{
+  display: block;
+}
+
+.saketAIMobile{
+  display: none;
+}
+
+.section3{
+  box-shadow: 10px 0px 10px black;
+}
 
 @media (max-width: 1280px) { 
     .logo {
@@ -1047,9 +1157,18 @@ a {
     opacity: 1;
     height: 70vh;
   }
+
+  .saketAIMobile{
+    display: block;
+    margin-top: 10rem;
+  }
   
   .model-foto img{
     width: 100%;
+  }
+
+  .track-on-window{
+    transform: none !important;
   }
   
   .about-col{
@@ -1068,6 +1187,99 @@ a {
   .pic2,.pic3,.pic4,.pic5{
     margin-top: 2rem !important;
   }
+
+  .sai .sai_hero_heading{
+    font-size: 8vh;
+    font-weight : 600;
+    font-family: Lato, sans-serif;
+    line-height: 1em;
+    color: #f5f5f5;
+  }
+
+  .sai_description{
+    font-size: 20px;
+    font-weight : 400;
+    font-family: Caudex, sans-serif;
+    margin-left: 1rem;
+    color:#f5f5f5;
+  }
+
+  .saketAITitle{
+    font-size:9vh;
+    font-weight:800;
+    font-family: Lato, sans-serif;
+  }
+
+  .leftContentFit{
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .saketAISubtitle{
+    font-size: 15px;
+    font-weight: 300;
+    font-family: Lato, sans-serif;
+    max-width: 250px;
+    text-align: left;
+    top: 20%;
+  }
+  .saketAISubtitle2{
+    font-size: 14px;
+    font-weight: 300;
+    font-family: Lato, sans-serif;
+    max-width: 250px;
+    text-align: left;
+    padding-right: 1rem;
+  }
+
+  .inoutMain{
+    margin-bottom: 6rem;
+  }
+  
+  .saketAITitle2{
+    font-size:9vh;
+    font-weight:800;
+    font-family: Lato, sans-serif;
+    line-height: 1.1em;
+  }
+  
+  .mobileText{
+    display: block;
+  }
+  .desktopText{
+    display: none;
+  }
+
+  .showInput{
+    width: 18rem;
+  }
+
+  .inputChange{
+    font-size: 14px;
+  }
+
+  .saketAIVideo{
+    opacity: 0.4;
+  }
+
+  .cardsMob{
+    position: static;
+    margin-top: 12rem;
+  }
+
+  .cardAI{
+    height: 80px;
+    width: 100%;
+  }
+
+  .mobDesc{
+    display : none;
+  }
+
 }
 @media (max-width: 575.98px) {
   .ant-modal-close{
