@@ -213,7 +213,7 @@ export const saketAIData = {
     firGpt : {
         title : "FitGPT",
         subtitle : "Ask Saket AI Anything About Health & Fitness.",
-        description : "Need expert advice on fitness, nutrition, or mental health? Meet FitGPT – your personalized AI fitness mentor.Ask questions, get instant answers, and start your health journey with trusted AI-powered guidance.",
+        description : "Need expert advice on fitness, nutrition, or mental health? Meet FitGPT – your personalized AI fitness mentor. Ask questions, get instant answers, and start your health journey with trusted AI-powered guidance.",
         questions : [
             "What’s the best post-workout meal?",
             "Suggest a 7-day weight loss plan.",
@@ -244,3 +244,66 @@ export const saketAIData = {
         ]
     }
 }
+
+
+export const promptStructure = `
+Here's a prompt designed to generate workout and nutrition plans based on the user's input, along with instructions for consistent formatting:
+
+**Prompt:**
+
+
+Create a personalized workout and nutrition plan based on the following user information. Format the response with clear headings, subheadings, and bullet points for easy parsing in a React application. Use markdown formatting where appropriate (e.g., # for headings, * for bullet points).
+
+**Instructions:**
+
+1.  **Workout Plan:** Generate a workout plan for the specified number of days per week, taking into account the user's fitness level, goals, workout location, and medical history. Each workout day should have a clear structure with exercises, sets, reps, and rest times. If the user has a medical condition, modify the exercises accordingly or suggest consulting a professional.
+2.  **Nutrition Plan:** Create a nutrition plan based on the user's body type, dietary preferences, allergies, activity level, and goals. Calculate the estimated daily caloric needs using appropriate formulas (considering height, weight, age, gender, and activity level). Adjust the calorie intake based on the user's primary goal (e.g., calorie surplus for gaining weight, calorie deficit for losing weight). Provide example meal plans for each meal frequency specified by the user. Consider the user's location and provide suggestions for affordable and high-quality food options available in their region. If the user has allergies, ensure the meal plans are free from those allergens.
+3.  **Formatting:**
+    *   Use # for main headings (e.g., # Workout Plan, # Nutrition Plan).
+    *   Use ## for subheadings (e.g., ## Day 1: Chest and Triceps).
+    *   Use * for bullet points (e.g., \* Exercise: Bench Press, \* Sets: 3, \* Reps: 8-12).
+    *   Clearly separate the Workout Plan and Nutrition Plan sections.
+    *   Provide a brief introduction summarizing the plan.
+    *   For each day of the workout plan, include a list of exercises with sets, reps, and rest times.
+    *   For the nutrition plan, provide sample meals for each meal of the day, including portion sizes and approximate macronutrient breakdown (if possible).
+    *   If any information is missing, use "None" as a placeholder.
+
+**Example Response Structure:**
+
+# Introduction
+
+Brief summary of the generated plan.
+
+# Workout Plan
+
+## Day 1: [Workout Focus]
+
+*   Exercise: [Exercise Name]
+*   Sets: [Number]
+*   Reps: [Range or Number]
+*   Rest: [Time]
+
+... (Repeat for all exercises for each day)
+
+## Day 2: [Workout Focus]
+... (Repeat for all workout days)
+
+# Nutrition Plan
+
+## Estimated Caloric Needs: [Calories]
+
+## Sample Meal Plan (Meal Frequency: [Number])
+
+### Meal 1:
+
+*   Food: [Food Name]
+*   Portion: [Amount]
+
+... (Repeat for all meals)
+
+### Meal 2:
+... (Repeat for all meals)
+
+This detailed prompt provides clear instructions for the model to generate well-structured and formatted workout and nutrition plans, which can be easily parsed and displayed in your React application. The consistent formatting ensures predictable output, making it easier to extract the necessary information.
+
+`

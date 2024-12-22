@@ -29,10 +29,6 @@ const SaketAISection4 = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const handleClick = () => {
-    navigate("/saketai/asksaket");
-  };
-
   // Animation variants for reveal mask
   const revealMask = {
     hidden: { y: "100%" },
@@ -55,6 +51,10 @@ const SaketAISection4 = () => {
       </motion.div>
     </div>
   ));
+
+  const handleRedirect = ()=>{
+    navigate("/saketai/hcal");
+  }
 
   return (
     <section
@@ -102,6 +102,11 @@ const SaketAISection4 = () => {
           {splitText(
             saketAIData.healthCalculator.description
           )}
+          </div>
+
+          <div 
+          onClick={handleRedirect} className="calculatorBtn mt-5 cursor-pointer bg-gradient-to-r from-yellow-400 to-red-400 text-black p-3 rounded-md font-medium">
+            Calculate Now
           </div>
         </div>
 

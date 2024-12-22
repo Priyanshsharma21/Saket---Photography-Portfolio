@@ -107,7 +107,7 @@ const SaketAISection3 = () => {
           )}
         </div>
 
-        <div className="mt-auto mb-12 flex flex-col items-center inoutMain">
+        <div className="mt-auto mb-16 flex flex-col items-center inoutMain">
           <div
             className="relative w-96 bg-[#262324c9] text-gray-300 text-lg py-2 px-4 rounded-lg border border-gray-500 shadow-lg text-center showInput"
           >

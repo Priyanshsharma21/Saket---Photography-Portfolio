@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Preloader } from './components';
 import { AnimatePresence } from 'framer-motion';
 import { Route, Routes } from 'react-router-dom';
-import { AskSaket, Home, SaketAI, WorkDetails } from './pages';
+import { AskSaket, HealthCalculator, Home, SaketAI, WorkDetails } from './pages';
 
 
 const App = () => {
@@ -33,6 +33,7 @@ const App = () => {
               <Route path="/gallerie/:id" element={<WorkDetails />} />
               <Route path="/saketai" element={<SaketAI />} />
               <Route path="/saketai/asksaket" element={<AskSaket />} />
+              <Route path="/saketai/hcal" element={<HealthCalculator />} />
             </Routes>
           </>
     </>
