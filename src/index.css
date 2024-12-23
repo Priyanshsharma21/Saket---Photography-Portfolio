@@ -1298,7 +1298,190 @@ footer {
   padding: 0.3rem 0.5rem;
 }
 
+/* Meditate */
+.calm-overview{
+  height : 200vh;
+}
+.main_lofi{
+  position: absolute;
+  top: 0px;
+  overflow:auto;
+  height: max-content;
+}
 
+.active0 {
+  box-shadow: 0px 0px 20px 10px rgba(23, 163, 184, 0.7);
+  animation: twinkling 3s ease-in-out infinite;
+}
+
+.active1 {
+  box-shadow: 0px 0px 20px 10px rgba(218, 112, 214, 0.7);
+  animation: twinkling 3s ease-in-out infinite;
+}
+
+.active2 {
+  box-shadow: 0px 0px 20px 10px rgba(86, 204, 242, 0.7);
+  animation: twinkling 3s ease-in-out infinite;
+}
+
+.active3 {
+  box-shadow: 0px 0px 20px 10px rgba(255, 184, 108, 0.7);
+  animation: twinkling 3s ease-in-out infinite;
+}
+
+.active4 {
+  box-shadow: 0px 0px 20px 10px rgba(253, 214, 165, 0.7);
+  animation: twinkling 3s ease-in-out infinite;
+}
+
+.active5 {
+  box-shadow: 0px 0px 20px 10px rgba(114, 208, 236, 0.7);
+  animation: twinkling 3s ease-in-out infinite;
+}
+
+.active6 {
+  box-shadow: 0px 0px 20px 10px rgba(140, 198, 63, 0.7);
+  animation: twinkling 3s ease-in-out infinite;
+}
+
+.active7 {
+  box-shadow: 0px 0px 20px 10px rgba(219, 131, 6, 0.7);
+  animation: twinkling 3s ease-in-out infinite;
+}
+
+.active8 {
+  box-shadow: 0px 0px 20px 10px rgba(117, 200, 204, 0.7);
+  animation: twinkling 3s ease-in-out infinite;
+}
+
+@keyframes twinkling {
+  0% {
+    box-shadow: 0px 0px 20px 10px rgba(23, 163, 184, 0.7);
+  }
+  50% {
+    box-shadow: 0px 0px 20px 10px rgba(218, 112, 214, 0.7);
+  }
+  100% {
+    box-shadow: 0px 0px 20px 10px rgba(23, 163, 184, 0.7);
+  }
+}
+
+.custom-range {
+  width: 100%;
+  border-radius: 1rem;
+  position: absolute;
+  height: 8px;
+  bottom: 1rem;
+  opacity: 0.8;
+  -webkit-appearance: none;
+  background-color: rgba(186, 126, 62, 0.562);
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: #ff6f00;
+  opacity: 0.8;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+}
+
+.custom-range::-webkit-slider-runnable-track {
+  background-color: rgba(255, 166, 0, 0);
+}
+
+.custom-range::-webkit-slider-thumb {
+  background-color: darkorange;
+}
+
+.custom-range::-moz-range-track {
+  background-color: orange;
+}
+
+.custom-range::-moz-range-thumb {
+  background-color: darkorange;
+}
+
+.custom-range::-ms-track {
+  background-color: orange;
+}
+
+.custom-range::-ms-thumb {
+  background-color: darkorange;
+}
+
+.custom-range::-ms-fill-lower {
+  background-color: orange;
+}
+
+
+.note{
+  background: #ff5370bb;
+  padding: 0.6rem;
+  position: absolute;
+  right: 6px;
+  top: 2px;
+  border-radius: 8px;
+  font-family: "Caudex", sans-serif;
+  width: 200px;
+}
+
+.note_title{
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+
+
+.main_lofi{
+  margin-top: 1rem;
+}
+
+.loficard {
+  position: relative;
+}
+
+.loficard::before {
+  content: attr(meratitle);
+  position: absolute;
+  top: 50%; /* Adjust the distance from the image */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 179, 255, 0.338);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+
+  z-index: 200;
+}
+
+.loficard:hover::before {
+  opacity: 1;
+}
+.calm-overview {
+  height: auto; /* Allow height to adjust to content */
+  overflow: auto; /* Enable scrolling if content exceeds height */
+  padding-bottom: 5rem;
+}
+
+.main_lofi {
+  position: relative; /* Use relative positioning to respect document flow */
+  margin-top: 1rem; /* Maintain margin if required */
+  height: auto; /* Let the container's height adjust based on content */
+}
+
+.loficard {
+  position: relative;
+  margin: 10px; /* Add margin for spacing */
+}
 
 @media (max-width: 1280px) { 
     .logo {
@@ -1748,11 +1931,12 @@ footer {
     margin-bottom: 1rem;
     font-size: 1rem;
     line-height: 1.2em;
+    bottom: 1rem;
   }
   
   .scratchCanvas{
     width : 300px;
-    height : 400px
+    height : 350px
   }
   
   

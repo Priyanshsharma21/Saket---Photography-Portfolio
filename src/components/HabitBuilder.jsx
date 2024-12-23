@@ -70,7 +70,7 @@ const HabitBuilder = () => {
     }, []);
 
     return (
-        <div className='w-full h-screen z-[9999] bg-black sticky top-0'>
+        <div className='w-full h-screen z-[999] bg-black sticky top-0'>
             <div className="scratch-container">
             <header>
                 <h1>Tiny Tiny Habits can take you to your goals</h1>
@@ -87,7 +87,7 @@ const HabitBuilder = () => {
                     </div>
                 )}
             </div>
-            <footer>Scratch the card to reveal today's task</footer>
+            <footer className="relative">{"( Scratch the card to reveal today's task )"}</footer>
         </div>
         </div>
     );

@@ -5,6 +5,7 @@ import About from './About.jsx'
 import BackBtn from './BackBtn.jsx'
 import Loader from './Loader.jsx'
 import HabitBuilder from './HabitBuilder.jsx'
+import Meditation from './Meditation.jsx'
 
 
 export {
@@ -14,5 +15,6 @@ export {
     About,
     BackBtn,
     Loader,
-    HabitBuilder
+    HabitBuilder,
+    Meditation
 }

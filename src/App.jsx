@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Preloader } from './components';
 import { AnimatePresence } from 'framer-motion';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import { AskSaket, HealthCalculator, Home, SaketAI, WorkDetails } from './pages';
+import { AskSaket, Calm, HealthCalculator, Home, SaketAI, WorkDetails } from './pages';
 import Snowfall from 'react-snowfall';
 
 
@@ -70,7 +70,7 @@ const App = () => {
               height: '100vh',
               zIndex: 9999999
             }}
-            snowflakeCount={17}
+            snowflakeCount={11}
             color={color}
           />
             <Routes>
@@ -79,6 +79,7 @@ const App = () => {
               <Route path="/saketai" element={<SaketAI />} />
               <Route path="/saketai/asksaket" element={<AskSaket />} />
               <Route path="/saketai/hcal" element={<HealthCalculator />} />
+              <Route path="/saketai/calm" element={<Calm />} />
             </Routes>
           </>
     </>

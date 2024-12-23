@@ -4,6 +4,7 @@ import SaketAISection2 from '../components/SaketAISection2.jsx';
 import SaketAISection3 from '../components/SaketAISection3.jsx';
 import SaketAISection4 from '../components/SaketAISection4.jsx';
 import HabitBuilder from '../components/HabitBuilder.jsx';
+import Meditation from '../components/Meditation.jsx';
 
 const SaketAI = () => {
 
@@ -16,6 +17,7 @@ const SaketAI = () => {
       <SaketAISection3 />
       <SaketAISection4 />
       <HabitBuilder />
+      <Meditation />
     </main>
   );
 };
