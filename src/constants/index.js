@@ -197,6 +197,11 @@ export const aboutData = {
             title: "Instagram",
             link : "https://www.instagram.com/saketgokhale/"
         },
+        {
+            id : 8,
+            title: "Spotify",
+            link : "https://open.spotify.com/user/i0plapizvhl2s6yk2tcyenees?si=T2ySn3H-S4ifv7cPxCoDqg&fbclid=PAZXh0bgNhZW0CMTEAAab-yTgzZIkrO2PYguMGAil8ZQwNkXVfDS9rDflDMbdZ_MEWpd2nwuPGAZE_aem_5IIePFxYSh0uA9h8nvIZyA&nd=1&dlsi=6baba06c47134b5f"
+        },
 
     ]
 };
