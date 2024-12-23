@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { BackBtn } from '../components';
-import { promptStructure } from '../constants';
+import { BackBtn, Loader } from '../components';
+import { gptsPrompt, promptStructure } from '../constants';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 
@@ -56,65 +56,201 @@ const HealthCalculator = () => {
     if (step > 0) setStep(step - 1);
   };
 
+  const formatResponse = (text) => {
+    const lines = text.split("\n"); // Split response into lines
+    const formattedLines = [];
+    
+    let isNested = false;
+  
+    lines.forEach((line, index) => {
+      // Handle main headings (e.g., # Introduction)
+      if (line.startsWith("# ")) {
+        formattedLines.push(
+          <h1 key={`h1-${index}`} className="text-2xl font-bold mb-2 sabHead calcHead">
+            {line.replace("# ", "")}
+          </h1>
+        );
+      }
+      // Handle sub-headings (e.g., ## Day 1: Push)
+      else if (line.startsWith("## ")) {
+        formattedLines.push(
+          <h2 key={`h2-${index}`} className="text-xl font-semibold mb-2 sabHead calcSubHead">
+            {line.replace("## ", "")}
+          </h2>
+        );
+      }
+      // Handle smaller sub-headings (e.g., ### Meal 1 (Breakfast - 7:00 AM))
+      else if (line.startsWith("### ")) {
+        formattedLines.push(
+          <h3 key={`h3-${index}`} className="text-lg font-medium mb-2 sabHead calcSubHead2">
+            {line.replace("### ", "")}
+          </h3>
+        );
+      }
+      // Handle bullet points with italic and colored part (like *Pizza (1 slice, once a week):**)
+      else if (line.startsWith("*")) {
+        const boldText = line.match(/\*\*(.*?)\*\*/); // Find text inside **
+        let formattedText = line.replace("*", "").trim();
+  
+        if (boldText) {
+          formattedText = formattedText.replace(boldText[0], `<strong>${boldText[1]}</strong>`);
+        }
+  
+        // Handle italic and color for parts like *Pizza (1 slice, once a week):**
+        const italicAndColorText = formattedText.match(/^(.*?)(\*\*.*\*\*)$/);
+  
+        if (italicAndColorText) {
+          // Apply italic and color only to the part like Pizza (1 slice, once a week):
+          const partToItalicize = italicAndColorText[1];
+          const restOfTheText = italicAndColorText[2];
+  
+          formattedText = `${partToItalicize} <span class="italic text-blue-500">${restOfTheText.replace(/\*\*/g, "")}</span>`;
+        }
+  
+        formattedLines.push(
+          <li key={`main-${index}`} className="mb-2 normalText" dangerouslySetInnerHTML={{ __html: formattedText }} />
+        );
+        isNested = false;
+      }
+      // Handle nested bullet points under main bullet points (e.g., * **Bench Press:** 3 sets of 8-12 reps, 60-90 sec rest)
+      else if (line.startsWith("* **")) {
+        formattedLines.push(
+          <ul key={`nested-${index}`} className="list-disc pl-10">
+            <li className="mb-2">
+              <span className="font-bold normalText">
+                {line.replace("* **", "").replace("**", "")}
+              </span>
+            </li>
+          </ul>
+        );
+        isNested = true;
+      }
+      // Handle nested bullet points under the same list item (e.g., **word**)
+      else if (isNested && line.startsWith("**")) {
+        formattedLines.push(
+          <ul key={`nested-item-${index}`} className="pl-10">
+            <li className="mb-2">
+              <span className="font-bold normalText">{line.replace(/\*\*/g, "")}</span>
+            </li>
+          </ul>
+        );
+      }
+      // Handle strong text (e.g., **word** for emphasis)
+      else if (line.includes("**")) {
+        formattedLines.push(
+          <p key={`strong-${index}`} className="mb-2 normalText">
+            {line.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")}
+          </p>
+        );
+      }
+      // Handle regular text wrapped in <p> tag
+      else {
+        formattedLines.push(
+          <p key={`text-${index}`} className="mb-2 normalText">
+            {line}
+          </p>
+        );
+      }
+    });
+  
+    return formattedLines;
+  };
+  
+  
+
   const handleSubmit = async(e) => {
     e.preventDefault();
-    // setLoading(true)
-    //     const genAI = new GoogleGenerativeAI(import.meta.env.VITE_API_KEY);
-    // const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-    // const result = await model.generateContent(prompt);
-    copyToClipboardAndRedirect()
+    setLoading(true);
+    try {
+      const genAI = new GoogleGenerativeAI(import.meta.env.VITE_API_KEY);
+      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+      const prompt = `
+      ${promptStructure}
+       User Information:
+      Fitness Level: ${formData.fitnessLevel}
+      Height: ${formData.height}
+      Weight: ${formData.weight}
+      Goal Weight: ${formData.goalWeight}
+      Age: ${formData.age}
+      Gender: ${formData.gender}
+      Workout Frequency: ${formData.howManyWorkouts}
+      Workout Location: ${formData.whereWorkout}
+      Primary Goal: ${formData.topGymGoal}
+      Secondary Goal: ${formData.secondGymGoal}
+      Sleep: ${formData.sleep}
+      Medical History: ${formData.medicalHistory}
+      Stress Level: ${formData.stressLevel}
+      Body Type: ${formData.bodyType}
+      Dietary Preference: ${formData.dietaryPreference}
+      Location: ${formData.location}
+      Allergies: ${formData.allergies}
+      Water Intake: ${formData.waterIntake}
+      Meal Frequency: ${formData.mealFrequency}
+      Favorite Food: ${formData.favoriteFood}
+      Activity Level: ${formData.activityLevel}
+      Supplement Usage: ${formData.supplementUsage}
+      Supplement Details: ${formData.supplementsDetails}
+      `;
+
+      const result = await model.generateContent(prompt);
+
+      const formattedResponse = formatResponse(result.response.text() || "Couldn't fetch a response. Try again later.");
+      setResponse(formattedResponse);
+      setLoading(false)
+    } catch (error) {
+      console.error("Error fetching response:", error);
+      setResponse([<p>Error fetching response.</p>]);
+    } finally {
+      setLoading(false);
+    }
   };
   
 
 
-  const copyToClipboardAndRedirect = () => {
+  const handleCopyAndRedirect = (destination) => {
     const prompt = `
-    Create a personalized workout and nutrition plan based on the following user information. Format the response with clear headings, subheadings, and bullet points for easy parsing in a React application. Use markdown formatting where appropriate (e.g., # for headings, * for bullet points).
-    
-    **User Information:**
-    *   **Fitness Level:** ${formData.fitnessLevel}
-    *   **Height:** ${formData.height}
-    *   **Weight:** ${formData.weight}
-    *   **Goal Weight:** ${formData.goalWeight}
-    *   **Age:** ${formData.age}
-    *   **Gender:** ${formData.gender}
-    *   **Workout Frequency:** ${formData.howManyWorkouts}
-    *   **Workout Location:** ${formData.whereWorkout}
-    *   **Primary Goal:** ${formData.topGymGoal}
-    *   **Secondary Goal:** ${formData.secondGymGoal}
-    *   **Sleep:** ${formData.sleep}
-    *   **Medical History:** ${formData.medicalHistory}
-    *   **Stress Level (1-10):** ${formData.stressLevel}
-    *   **Body Type:** ${formData.bodyType}
-    *   **Dietary Preference:** ${formData.dietaryPreference}
-    *   **Location:** ${formData.location}
-    *   **Allergies:** ${formData.allergies}
-    *   **Water Intake:** ${formData.waterIntake}
-    *   **Meal Frequency:** ${formData.mealFrequency}
-    *   **Favorite Food:** ${formData.favoriteFood}
-    *   **Activity Level:** ${formData.activityLevel}
-    *   **Supplement Usage:** ${formData.supplementUsage}
-    *   **Supplement Details:** ${formData.supplementsDetails}
-    ${promptStructure}`;
+    ${gptsPrompt}    
+    User Information:
+      Fitness Level: ${formData.fitnessLevel}
+      Height: ${formData.height}
+      Weight: ${formData.weight}
+      Goal Weight: ${formData.goalWeight}
+      Age: ${formData.age}
+      Gender: ${formData.gender}
+      Workout Frequency: ${formData.howManyWorkouts}
+      Workout Location: ${formData.whereWorkout}
+      Primary Goal: ${formData.topGymGoal}
+      Secondary Goal: ${formData.secondGymGoal}
+      Sleep: ${formData.sleep}
+      Medical History: ${formData.medicalHistory}
+      Stress Level: ${formData.stressLevel}
+      Body Type: ${formData.bodyType}
+      Dietary Preference: ${formData.dietaryPreference}
+      Location: ${formData.location}
+      Allergies: ${formData.allergies}
+      Water Intake: ${formData.waterIntake}
+      Meal Frequency: ${formData.mealFrequency}
+      Favorite Food: ${formData.favoriteFood}
+      Activity Level: ${formData.activityLevel}
+      Supplement Usage: ${formData.supplementUsage}
+      Supplement Details: ${formData.supplementsDetails}
+    `;
 
     navigator.clipboard.writeText(prompt).then(() => {
-      // Redirect user to ChatGPT with prompt copied
-      window.location.href = 'https://chat.openai.com';
+      if (destination === 'gemini') {
+        window.open('https://gemini.google.com/', '_blank');
+      } else if (destination === 'gpt') {
+        window.open('https://chat.openai.com/', '_blank');
+      }
     });
   };
 
 
 
-
-
-
-
-
-
-
-
-
-
+const handleGenerateAgain = ()=>{
+    setResponse([])
+}
 
 
   const currentField = fields[step];
@@ -125,12 +261,37 @@ const HealthCalculator = () => {
       <div className="w-full p-4">
         <BackBtn />
       </div>
-      <form className="p-6 w-full h-screen flex flex-col items-center justify-center" onSubmit={handleSubmit}>
+     <div>
+        {loading ? (
+            <div className="w-full h-screen flex justify-center items-center">
+            <Loader />
+            </div>
+        ):(
+            <>
+            {response.length > 0 ? (
+        <>
+           <div className="w-full h-screen flex justify-center items-center responseTree">
+           <div className="w-[95vw] h-[80vh] p-5 bg-[#3d3d3da4] rounded-xl overflow-scroll overflow-x-auto
+           ">
+                <ul className="list-disc pl-5">{response}</ul>
+            </div>
+           </div>
+
+            <button type="button" 
+              className="bg-blue-500 fixed bottom-5 right-5 text-black px-4 py-2 rounded bg-gradient-to-r from-blue-400 to-pink-400"
+            onClick={handleGenerateAgain}>
+              Generate Again
+            </button>
+        </>
+      ):(
+        <>
         <div
-          className="gradient-text absolute top-10 saketAITitle2 saketAICalculator text-center bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-red-400"
+          className="gradient-text absolute top-10 saketAITitle2 saketAICalculator text-center bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 w-full to-red-400"
         >
           Health Calculator
         </div>
+      <form className="p-6 w-full h-screen flex flex-col items-center justify-center" onSubmit={handleSubmit}>
+        
         <div className="mb-6 flex flex-col">
           <label className="calculatorLable">{currentField.label}:</label>
           {currentField.type === 'select' && (
@@ -201,7 +362,7 @@ const HealthCalculator = () => {
             />
           </div>
         )}
-        <div className="flex justify-between w-full absolute bottom-10 px-10">
+        <div className="flex justify-between items-center w-full absolute bottom-10 px-10 buttonsCalc">
           <button
             type="button"
             onClick={handlePrevious}
@@ -212,16 +373,24 @@ const HealthCalculator = () => {
           </button>
           {step === fields.length - 1 ? (
             <>
-                {/* <button
+           
+            <button type="button" 
+              className="bg-blue-500 text-black px-4 py-2 rounded bg-gradient-to-r from-green-400 to-red-400"
+            onClick={()=>handleCopyAndRedirect("gpt")}>
+              Ctrl + V at ChatGPT
+            </button>
+
+            <button type="button" 
+              className="bg-blue-500 text-black px-4 py-2 rounded bg-gradient-to-r from-blue-400 to-pink-400"
+            onClick={()=>handleCopyAndRedirect("gemini")}>
+              Ctrl + V at Gemini
+            </button>
+
+            <button
               type="submit"
               className="bg-blue-500 text-black px-4 py-2 rounded bg-gradient-to-r from-yellow-400 to-red-400"
             >
               Submit
-            </button> */}
-            <button type="button" 
-              className="bg-blue-500 text-black px-4 py-2 rounded bg-gradient-to-r from-yellow-400 to-red-400"
-            onClick={copyToClipboardAndRedirect}>
-              Ctrl + V at ChatGPT
             </button>
             </>
           ) : (
@@ -235,6 +404,11 @@ const HealthCalculator = () => {
           )}
         </div>
       </form>
+        </>
+      )}
+            </>
+        )}
+     </div>
     </div>
   );
 };

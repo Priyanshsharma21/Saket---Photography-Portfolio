@@ -1182,6 +1182,20 @@ input[type="range"]::-moz-range-thumb {
   border: 2px solid #fff;
 }
 
+.normalText{
+  font-family: Lato, sans-serif;
+
+}
+
+.sabHead{
+  margin-top: 1.5rem;
+  font-family: "Caudex", sans-serif;
+
+}
+
+.calcSubHead,.calcSubHead2{
+  margin-bottom: 1rem;
+}
 
 @media (max-width: 1280px) { 
     .logo {
@@ -1592,7 +1606,27 @@ input[type="range"]::-moz-range-thumb {
     cursor: pointer;
     border: 2px solid #fff;
   }
+
+  .responseTree{
+    align-items: flex-start;
+    margin-top: 1.5rem;
+  }
     
+  .responseTree div{
+    padding-left: 4px;
+  }
+
+  .buttonsCalc{
+    flex-direction: column;
+    bottom: 12px;
+  }
+
+  .buttonsCalc button{
+    width: 100%;
+    margin-top: 0.5rem;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
 
 }
 @media (max-width: 575.98px) {

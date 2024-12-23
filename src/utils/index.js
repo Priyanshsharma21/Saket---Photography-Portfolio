@@ -27,3 +27,6 @@ export  const slideRight = {
     hidden: { x: '-50px', opacity: 0 },
     visible: { x: '0px', opacity: 1, transition: { duration: 0.3 } }
   };
+
+
+
