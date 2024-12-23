@@ -388,3 +388,285 @@ export const gptsPrompt = `
 
 
 
+export const habitData  = [
+    {
+        title: "30-Minute Walk",
+        description: "Take a brisk 30-minute walk outdoors or on a treadmill. Focus on deep breathing and observing your surroundings to clear your mind and improve physical health."
+    },
+    {
+        title: "Listen to a Podcast",
+        description: "Choose a motivational or educational podcast. Sit in a quiet place, listen attentively, and take notes on key points you can apply to your life."
+    },
+    {
+        title: "Call an Old Friend",
+        description: "Reconnect with a friend you haven’t spoken to in a while. Spend at least 10 minutes catching up, sharing memories, and strengthening your bond."
+    },
+    {
+        title: "15-Minute HIIT Workout",
+        description: "Perform a High-Intensity Interval Training session with exercises like jumping jacks, burpees, push-ups, and squats. Do 40 seconds of work and 20 seconds of rest for each move."
+    },
+    {
+        title: "Gratitude Journaling",
+        description: "Write down 3 things you're grateful for today. Be specific and reflect on why these things make you happy or thankful."
+    },
+    {
+        title: "Drink 2 Liters of Water",
+        description: "Ensure you drink at least 2 liters of water throughout the day. Keep a reusable bottle handy to track your intake."
+    },
+    {
+        title: "Meditate for 10 Minutes",
+        description: "Find a quiet place, sit comfortably, and focus on your breath. Use a guided meditation app if needed to improve mindfulness and reduce stress."
+    },
+    {
+        title: "Read 10 Pages of a Book",
+        description: "Pick a book that inspires or educates you. Dedicate time to read 10 pages without distractions, absorbing new knowledge or ideas."
+    },
+    {
+        title: "Declutter Your Workspace",
+        description: "Spend 15 minutes organizing your desk or workspace. Remove unnecessary items, clean surfaces, and arrange essentials for better focus and productivity."
+    },
+    {
+        title: "Compliment Someone",
+        description: "Give a genuine compliment to someone you interact with today. It could be about their work, kindness, or appearance, brightening their day and yours."
+    },
+    {
+        title: "Make Your Bed",
+        description: "Start your day by neatly making your bed. This simple act sets a positive tone and gives you a sense of accomplishment right away."
+    },
+    {
+        title: "5-Minute Deep Breathing",
+        description: "Take 5 minutes to practice deep breathing. Inhale for 4 seconds, hold for 7 seconds, and exhale for 8 seconds. This helps to calm your mind and reduce stress."
+    },
+    {
+        title: "Plan Tomorrow Today",
+        description: "Before going to bed, jot down 3 things you want to achieve the next day. This habit improves focus and productivity."
+    },
+    {
+        title: "Drink a Glass of Water First Thing in the Morning",
+        description: "Hydrate your body by drinking a full glass of water right after you wake up. This helps kickstart your metabolism and refreshes your system."
+    },
+    {
+        title: "Smile in the Mirror",
+        description: "Take a moment to smile at yourself in the mirror. It boosts self-esteem and releases feel-good hormones."
+    },
+    {
+        title: "Write Down One Positive Thought",
+        description: "At any point in the day, write down one positive thought or affirmation. Revisit it when you need motivation."
+    },
+    {
+        title: "Stretch for 5 Minutes",
+        description: "Do a quick 5-minute stretching routine to release tension in your muscles and improve flexibility."
+    },
+    {
+        title: "Spend 10 Minutes Learning Something New",
+        description: "Dedicate 10 minutes to learn something—read a fun fact, watch a tutorial, or explore a new skill online."
+    },
+    {
+        title: "Clean One Small Area",
+        description: "Pick a small area—your desk, a drawer, or a shelf—and tidy it up. This habit fosters a sense of control and cleanliness."
+    },
+    {
+        title: "Disconnect from Screens for 30 Minutes",
+        description: "Set aside 30 minutes to unplug from all screens. Use this time to reflect, read, or simply enjoy your surroundings."
+    },
+    {
+        title: "Practice Gratitude",
+        description: "Write down three things you’re grateful for today. This rewires your brain to focus on the positives in life."
+    },
+    {
+        title: "Compliment Someone",
+        description: "Give a genuine compliment to a colleague, family member, or stranger. Brightening someone’s day creates positivity."
+    },
+    {
+        title: "Eat One Extra Vegetable",
+        description: "Incorporate one additional vegetable into your meals today. It’s a small step toward a healthier diet."
+    },
+    {
+        title: "Stand and Stretch Every Hour",
+        description: "Set a timer to stand and stretch for 1-2 minutes every hour to improve posture and blood circulation."
+    },
+    {
+        title: "Write Down a Worry",
+        description: "Identify one worry and write it down along with a small action you can take to address it. This clears your mind."
+    },
+    {
+        title: "Spend 5 Minutes in Nature",
+        description: "Step outside to feel the fresh air, look at the sky, or observe the greenery around you. Nature boosts mental clarity."
+    },
+    {
+        title: "Organize Your Digital Space",
+        description: "Delete five unnecessary files or organize a folder on your phone or computer to create a cleaner digital environment."
+    },
+    {
+        title: "Learn One New Word",
+        description: "Look up and learn a new word today. Try using it in a sentence to enhance your vocabulary."
+    },
+    {
+        title: "Read One Page of a Book",
+        description: "Read at least one page of a book today. This small habit makes reading more approachable."
+    },
+    {
+        title: "Do 10 Push-Ups",
+        description: "Perform 10 push-ups to engage your body and build physical strength. Adjust to your fitness level as needed."
+    },
+    {
+        title: "Drink Water Before Each Meal",
+        description: "Have a glass of water before every meal to improve digestion and control your appetite."
+    },
+    {
+        title: "Set One Micro Goal for the Day",
+        description: "Identify a tiny goal for today, such as organizing a drawer or making a phone call, and accomplish it."
+    },
+    {
+        title: "Practice Active Listening",
+        description: "In your next conversation, focus entirely on the speaker without interrupting or thinking of your response."
+    },
+    {
+        title: "Unfollow One Negative Influence",
+        description: "Identify a social media account or source of negativity and unfollow or mute it to declutter your mental space."
+    },
+    {
+        title: "Do One Act of Kindness",
+        description: "Perform a simple act of kindness, like holding a door, helping someone, or sharing a kind word."
+    },
+    {
+        title: "Spend 5 Minutes Journaling",
+        description: "Write about your thoughts, emotions, or events of the day to process your experiences and clear your mind."
+    },
+    {
+        title: "Clean Your Phone Screen",
+        description: "Take a moment to clean your phone screen. It’s a small habit that promotes hygiene and mindfulness."
+    },
+    {
+        title: "Meditate for 3 Minutes",
+        description: "Close your eyes and focus on your breathing for three minutes. It’s a quick way to center yourself."
+    },
+    {
+        title: "Set a Timer for Focused Work",
+        description: "Use a timer (e.g., Pomodoro method) to focus on one task for 25 minutes without distractions."
+    },
+    {
+        title: "Say 'Thank You' to Yourself",
+        description: "Take a moment to thank yourself for something you’ve done well today. Self-appreciation builds confidence."
+    },
+    { 
+        title: "Start Your Day with Water", 
+        description: "Drink a full glass of water first thing in the morning to hydrate and kickstart your metabolism." 
+      },
+      { 
+        title: "Practice Gratitude", 
+        description: "Write down three things you're grateful for to foster positivity and happiness." 
+      },
+      { 
+        title: "Digital Detox Hour", 
+        description: "Turn off your devices for one hour each day to reset and focus on the present." 
+      },
+      { 
+        title: "5-Minute Breathing Exercise", 
+        description: "Take five minutes to breathe deeply, reducing stress and improving focus." 
+      },
+      { 
+        title: "Clean One Small Space", 
+        description: "Declutter a drawer or corner of your home to maintain organization." 
+      },
+      { 
+        title: "Learn a New Word", 
+        description: "Expand your vocabulary by learning and using a new word today." 
+      },
+      { 
+        title: "Plan Tomorrow", 
+        description: "Spend five minutes listing your priorities for the next day." 
+      },
+      { 
+        title: "Compliment Someone", 
+        description: "Brighten someone’s day with a genuine compliment." 
+      },
+      { 
+        title: "Stand for 5 Minutes", 
+        description: "Take a standing break to improve posture and circulation." 
+      },
+      { 
+        title: "Try a New Yoga Pose", 
+        description: "Learn and hold a yoga pose to improve flexibility and balance." 
+      },
+      { 
+        title: "Journal One Sentence", 
+        description: "Write one sentence reflecting on your day or mood." 
+      },
+      { 
+        title: "Walk in Nature", 
+        description: "Take a short walk outdoors to connect with nature and recharge." 
+      },
+      { 
+        title: "Listen to an Inspiring Talk", 
+        description: "Spend 10 minutes on a podcast or TED Talk to spark new ideas." 
+      },
+      { 
+        title: "Read One Page", 
+        description: "Pick up a book and read just one page to keep your mind engaged." 
+      },
+      { 
+        title: "Take a Stretch Break", 
+        description: "Stretch for five minutes to ease muscle tension and improve flexibility." 
+      },
+      { 
+        title: "Mindful Eating", 
+        description: "Take time to enjoy and truly taste your meal, without distractions." 
+      },
+      { 
+        title: "Organize Your Digital Space", 
+        description: "Clean up your desktop or phone by deleting unnecessary files." 
+      },
+      { 
+        title: "Do a 1-Minute Plank", 
+        description: "Boost your core strength with a quick plank exercise." 
+      },
+      { 
+        title: "Write a Thank-You Note", 
+        description: "Show appreciation to someone with a handwritten or digital note." 
+      },
+      { 
+        title: "Learn One Fact", 
+        description: "Google a topic and learn one interesting fact today." 
+      },
+      { 
+        title: "Watch the Sunrise or Sunset", 
+        description: "Spend a few minutes appreciating nature's beauty." 
+      },
+      { 
+        title: "Reconnect with an Old Friend", 
+        description: "Send a quick message to catch up with someone from your past." 
+      },
+      { 
+        title: "Try a Breathing Pattern", 
+        description: "Practice box breathing: inhale for 4 seconds, hold for 4, exhale for 4, hold for 4." 
+      },
+      { 
+        title: "Take a Cold Shower", 
+        description: "Boost energy and resilience by ending your shower with cold water." 
+      },
+      { 
+        title: "Cook a New Recipe", 
+        description: "Experiment with a simple, healthy dish in your kitchen." 
+      },
+      { 
+        title: "Visualize Success", 
+        description: "Spend a minute picturing yourself achieving a goal." 
+      },
+      { 
+        title: "Solve a Puzzle", 
+        description: "Challenge your brain with a Sudoku or crossword puzzle." 
+      },
+      { 
+        title: "Take a Media-Free Morning", 
+        description: "Skip social media for the first hour after waking." 
+      },
+      { 
+        title: "Practice a Hobby", 
+        description: "Spend 10 minutes on an activity you enjoy, like drawing or music." 
+      },
+      { 
+        title: "Share Kindness", 
+        description: "Perform a random act of kindness, big or small." 
+      },
+];

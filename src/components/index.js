@@ -4,6 +4,8 @@ import PageLoader from './PageLoader.jsx'
 import About from './About.jsx'
 import BackBtn from './BackBtn.jsx'
 import Loader from './Loader.jsx'
+import HabitBuilder from './HabitBuilder.jsx'
+
 
 export {
     Preloader,
@@ -11,5 +13,6 @@ export {
     PageLoader,
     About,
     BackBtn,
-    Loader
+    Loader,
+    HabitBuilder
 }

@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { saketAIData } from "../constants/index.js";
-import { motion } from 'framer-motion';
 import BackBtn from '../components/BackBtn.jsx';
 import SaketAISection1 from '../components/SaketAISection1.jsx';
 import SaketAISection2 from '../components/SaketAISection2.jsx';
 import SaketAISection3 from '../components/SaketAISection3.jsx';
 import SaketAISection4 from '../components/SaketAISection4.jsx';
+import HabitBuilder from '../components/HabitBuilder.jsx';
 
 const SaketAI = () => {
 
@@ -17,6 +15,7 @@ const SaketAI = () => {
       <SaketAISection2 />
       <SaketAISection3 />
       <SaketAISection4 />
+      <HabitBuilder />
     </main>
   );
 };
