@@ -1483,6 +1483,10 @@ input[type="range"]::-webkit-slider-thumb {
   margin: 10px; /* Add margin for spacing */
 }
 
+.askSaketAIImg{
+  width: 400px;
+}
+
 @media (max-width: 1280px) { 
     .logo {
         width: 140px;
@@ -1968,6 +1972,15 @@ input[type="range"]::-webkit-slider-thumb {
     color: #121212;
     font-family: "Caudex", sans-serif;
     padding: 0.3rem 0.5rem;
+  }
+
+  .askSaketAIImg{
+    width: 80px;
+    transform: rotate(-90deg);
+  }
+
+  .mobileStyleImg{
+    top: 1rem;
   }
 
 }

@@ -736,3 +736,10 @@ export const lofiArray = [
         title : "Wind"
     },
 ]
+
+export const aiQuestions = [
+    "How can I stay motivated to work out consistently, even on busy days?",
+    "Is intermittent fasting effective for weight management, and how should I start?",
+    "How can I manage stress and anxiety in a fast-paced, high-pressure environment?",
+    "What's the best skin routine to follow for working professionals ?"
+]
