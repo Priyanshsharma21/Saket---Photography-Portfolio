@@ -1524,6 +1524,23 @@ input[type="range"]::-webkit-slider-thumb {
   border: 1px solid gray;
 }
 
+.monkFloat {
+  width: 400px; /* Adjust size as needed */
+  animation: float 3s ease-in-out infinite;
+  left: 3.5rem;
+  bottom: 2rem;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
 @media (max-width: 1280px) { 
     .logo {
         width: 140px;
@@ -1870,6 +1887,24 @@ input[type="range"]::-webkit-slider-thumb {
     overflow: auto;
     height: 400px;
     margin-top: 3rem;
+  }
+
+  .meditateWithSaket h1{
+    font-size: 8vh;
+        line-height: 1em;
+        font-weight: 800;
+        font-family: "Lato", sans-serif;
+        position: relative;
+        bottom: 9rem;
+        text-transform: uppercase;
+        right: 2rem;
+  }
+
+  .monkFloat {
+    width: 400px; /* Adjust size as needed */
+    animation: float 3s ease-in-out infinite;
+    left: 2.5rem;
+    bottom: 4rem;
   }
 
   .saketAICalculator{

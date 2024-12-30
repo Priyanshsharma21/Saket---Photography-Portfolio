@@ -11,7 +11,7 @@ const Better2025 = () => {
     
   return (
     <div className='w-full h-screen snap z-[9999] bg-black sticky top-0
-    group bg-gradient-to-br from-pink-900/50 to-black p-6 rounded-xl border border-pink-500/20 hover:border-pink-500/50 transition-all md:col-span-2 lg:col-span-2
+    group bg-gradient-to-br from-pink-900/50 to-black p-6 transition-all md:col-span-2 lg:col-span-2
     '>
         <div className="w-full h-screen flex justify-center items-center flex-col">
             <h3 className="to5">AIM 2025</h3>

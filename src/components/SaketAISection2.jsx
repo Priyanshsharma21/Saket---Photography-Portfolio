@@ -43,7 +43,7 @@ const SaketAISection2 = () => {
     <section
       ref={ref}
       className="w-full bg-black snap sticky top-0 flex flex-col justify-center items-center h-screen saketGlass z-10
-      group bg-gradient-to-br from-purple-900/50 to-black p-6 hover:border-purple-500/50 transition-all
+      
       "
     >
       <video
