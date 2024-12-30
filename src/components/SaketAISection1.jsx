@@ -11,7 +11,7 @@ const SaketAISection1 = () => {
         }),
       };
   return (
-    <section className="sai_banner sticky bg-black top-0 w-full h-screen">
+    <section className="sai_banner snap sticky bg-black top-0 w-full h-screen">
     <video
       className="absolute top-0 left-0 w-full h-full object-cover opacity-50"
       src="https://res.cloudinary.com/dmjswpxjb/video/upload/v1734444089/1217_kprmkm.mp4"

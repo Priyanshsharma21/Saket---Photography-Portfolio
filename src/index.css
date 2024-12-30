@@ -1487,6 +1487,20 @@ input[type="range"]::-webkit-slider-thumb {
   width: 400px;
 }
 
+
+.sai,.snap{
+  width: 100%;
+  height: 100vh;
+}
+.sai{
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+}
+
+.snap{
+  scroll-snap-align: start;
+}
+
 @media (max-width: 1280px) { 
     .logo {
         width: 140px;

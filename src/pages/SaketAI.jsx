@@ -8,7 +8,6 @@ import Meditation from '../components/Meditation.jsx';
 
 const SaketAI = () => {
 
-  
   return (
     <main className="w-full sai h-full overflow-auto">
      <BackBtn />

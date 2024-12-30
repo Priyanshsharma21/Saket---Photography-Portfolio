@@ -37,8 +37,6 @@ const App = () => {
       const currentPath = pathName.pathname.split("/")[2];
       const prevPath = pathName.pathname.split("/")[1];
 
-      console.log(currentPath, prevPath)
-
       
       if (currentPath === 'chronicles' && prevPath==="gallerie") {
         setColor("white");
@@ -51,11 +49,9 @@ const App = () => {
         setColor("#A7E0F3");
         audioRef.current.src = 'https://res.cloudinary.com/dmjswpxjb/video/upload/v1734941758/Frank_Tedesco_Roots_of_Hope_Original_t051jb.mp3';
       }else if(currentPath === undefined && prevPath === "saketai"){
-        console.log("works")
         setColor("#F98B57");
         audioRef.current.src = 'https://res.cloudinary.com/dmjswpxjb/video/upload/v1734983556/saket_dada_gebos5.mp3';
       }else{
-        console.log("Hello else")
         setColor("#F98B57");
         audioRef.current.src = '';
       }

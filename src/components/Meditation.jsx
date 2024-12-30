@@ -9,7 +9,7 @@ const Meditation = () => {
         navigate("/saketai/calm");
     }
   return (
-    <div className='w-full h-screen z-[9999] bg-black sticky top-0'>
+    <div className='w-full h-screen snap z-[9999] bg-black sticky top-0'>
      <div className="absolute top-0 left-0 w-full h-full opacity-100">
         <video
           className="w-full h-full object-cover saketAIVideo meditationVideo"

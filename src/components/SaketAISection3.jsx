@@ -58,7 +58,7 @@ const SaketAISection3 = () => {
   return (
     <section
       ref={ref}
-      className="w-full h-screen sticky top-0 flex section3 justify-center items-center z-30 bg-black"
+      className="w-full h-screen sticky snap top-0 flex section3 justify-center items-center z-30 bg-black"
     >
       <div className="absolute top-0 left-0 w-full h-full opacity-100 saketAIVideo">
         <video
