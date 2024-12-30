@@ -1830,7 +1830,7 @@ input[type="range"]::-webkit-slider-thumb {
   }
 
   .inoutMain{
-    margin-bottom: 6rem;
+    margin-bottom: 7rem;
   }
   
   .saketAITitle2{
@@ -1842,6 +1842,17 @@ input[type="range"]::-webkit-slider-thumb {
   .calculatorBtn{
     font-size: 14px;
     padding: 0.5rem 0.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .labelML{
+    font-size: 14px;
+  }
+
+  .gradBtn25{
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 1rem;
   }
   
   .mobileText{
@@ -1895,7 +1906,7 @@ input[type="range"]::-webkit-slider-thumb {
         font-weight: 800;
         font-family: "Lato", sans-serif;
         position: relative;
-        bottom: 9rem;
+        bottom: 14rem;
         text-transform: uppercase;
         right: 2rem;
   }
@@ -1903,8 +1914,10 @@ input[type="range"]::-webkit-slider-thumb {
   .monkFloat {
     width: 400px; /* Adjust size as needed */
     animation: float 3s ease-in-out infinite;
-    left: 2.5rem;
-    bottom: 4rem;
+  }
+
+  .monk{
+    bottom: 7.5rem;
   }
 
   .saketAICalculator{
@@ -2012,7 +2025,13 @@ input[type="range"]::-webkit-slider-thumb {
   
   .scratchCanvas{
     width : 300px;
-    height : 350px
+    height : 300px;
+    position:relative;
+    bottom: 1rem;
+  }
+
+  .scratchInfo{
+    bottom: 2rem;
   }
   
   
@@ -2063,6 +2082,10 @@ input[type="range"]::-webkit-slider-thumb {
     font-size: 14px;
     text-align: center;
     margin-top: 1rem;
+  }
+
+  .saketAISubtitle{
+    font-weight: 500;
   }
 
 }

@@ -150,12 +150,13 @@ const Better2025 = () => {
                     </>
                 ):(
                     <div className="flex flex-col items-center justify-center w-full h-full">
-                    <label htmlFor="goal" className="text-white text-xl mb-4">
+                    <label htmlFor="goal" className="text-white text-xl mb-4 labelML">
                         Enter Your Goal + Preferences/Constraints :
                     </label>
                     <textarea
                         id="goal"
                         value={goal}
+                        required
                         onChange={(e) => setGoal(e.target.value)}
                         placeholder="Improve my mindset and become best version of myself."
                         className="w-[90%] max-h-[300px] md:w-[50%] p-4 rounded-lg border focus:outline-none focus:ring-2 focus:ring-pink-500 bg-[#12121200] border-pink-500/100 hover:border-pink-500/50"
@@ -164,7 +165,7 @@ const Better2025 = () => {
                     <button
                         type="button"
                         onClick={handleSubmit}
-                        className="bg-gradient-to-r from-blue-400 to-pink-400 text-black px-6 py-3 mt-4 rounded-lg text-lg"
+                        className="bg-gradient-to-r from-blue-400 to-pink-400 text-black px-6 py-3 mt-4 rounded-lg text-lg gradBtn25"
                     >
                         {loading ? 'Generating...' : 'Generate Routine'}
                     </button>

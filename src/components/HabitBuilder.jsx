@@ -89,7 +89,7 @@ const HabitBuilder = () => {
                     </div>
                 )}
             </div>
-            <footer className="relative">{"( Scratch the card to reveal today's task )"}</footer>
+            <footer className="relative scratchInfo">{"( Scratch the card to reveal today's task )"}</footer>
         </div>
         </div>
     );
