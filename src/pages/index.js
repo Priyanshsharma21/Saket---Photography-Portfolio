@@ -4,6 +4,7 @@ import SaketAI from './SaketAI'
 import AskSaket from './AskSaket'
 import HealthCalculator from './HealthCalculator'
 import Calm from './Calm'
+import Better2025 from './Better2025'
 
 
 export {
@@ -12,5 +13,6 @@ export {
     SaketAI,
     AskSaket,
     HealthCalculator,
-    Calm
+    Calm,
+    Better2025
 }

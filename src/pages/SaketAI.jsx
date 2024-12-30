@@ -5,6 +5,7 @@ import SaketAISection3 from '../components/SaketAISection3.jsx';
 import SaketAISection4 from '../components/SaketAISection4.jsx';
 import HabitBuilder from '../components/HabitBuilder.jsx';
 import Meditation from '../components/Meditation.jsx';
+import Better2025 from '../components/Better2025.jsx';
 
 const SaketAI = () => {
 
@@ -17,6 +18,7 @@ const SaketAI = () => {
       <SaketAISection4 />
       <HabitBuilder />
       <Meditation />
+      <Better2025 />
     </main>
   );
 };

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Preloader } from './components';
 import { AnimatePresence } from 'framer-motion';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import { AskSaket, Calm, HealthCalculator, Home, SaketAI, WorkDetails } from './pages';
+import { AskSaket, Better2025, Calm, HealthCalculator, Home, SaketAI, WorkDetails } from './pages';
 import Snowfall from 'react-snowfall';
 
 
@@ -83,6 +83,7 @@ const App = () => {
               <Route path="/saketai/asksaket" element={<AskSaket />} />
               <Route path="/saketai/hcal" element={<HealthCalculator />} />
               <Route path="/saketai/calm" element={<Calm />} />
+              <Route path="/saketai/better2025" element={<Better2025 />} />
             </Routes>
           </>
     </>

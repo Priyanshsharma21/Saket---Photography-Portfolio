@@ -70,7 +70,9 @@ const HabitBuilder = () => {
     }, []);
 
     return (
-        <div className='w-full h-screen z-[999] snap bg-black sticky top-0'>
+        <div className='w-full h-screen z-[999] snap bg-black sticky top-0
+        group bg-gradient-to-br from-blue-900/50 to-black p-6  hover:border-blue-500/50 transition-all
+        '>
             <div className="scratch-container">
             <header>
                 <h1>Tiny Tiny Habits can take you to your goals</h1>
